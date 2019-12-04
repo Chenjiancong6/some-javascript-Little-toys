@@ -1,0 +1,201 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /*background: url(../img/preview.png) ;*/
+  max-width: 100%;
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+}
+li {
+  list-style: none;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  position: absolute;
+  margin-left: 42%;
+  margin-top: 22%;
+  -webkit-transform-style: preserve-3d; /*实现3d立体效果 */
+  -webkit-transform: rotateX(13deg); /*实现3d立体效果 Safari and Chrome */
+  -webkit-animation: move 5s linear infinite;
+  /* CSS3 animation（动画） 属性 */
+}
+.minbox {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50px;
+  top: 30px;
+  -webkit-transform-style: preserve-3d; /*实现3d立体效果 */
+}
+.minbox li {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.minbox li:nth-child(1) {
+  /* :nth-child(n) 选择器匹配父元素中的第 n 个子元素 */
+  background: url(../img/01.png) no-repeat 0 0;
+  -webkit-transform: translateZ(50px); /* 定义沿着 Z 轴的 3D 旋转 */
+}
+.minbox li:nth-child(2) {
+  background: url(../img/02.png) no-repeat 0 0;
+  -webkit-transform: rotateX(180deg) translateZ(50px);
+  /* 度（Degress）。一个圆共360度 */
+}
+.minbox li:nth-child(3) {
+  background: url(../img/03.png) no-repeat 0 0;
+  -webkit-transform: rotateX(-90deg) translateZ(50px);
+}
+.minbox li:nth-child(4) {
+  background: url(../img/04.png) no-repeat 0 0;
+  -webkit-transform: rotateX(90deg) translateZ(50px);
+}
+.minbox li:nth-child(5) {
+  background: url(../img/05.png) no-repeat 0 0;
+  -webkit-transform: rotateY(-90deg) translateZ(50px);
+}
+.minbox li:nth-child(6) {
+  background: url(../img/06.png) no-repeat 0 0;
+  -webkit-transform: rotateY(90deg) translateZ(50px);
+}
+
+/* 大的图片 */
+.maxbox li:nth-child(1) {
+  background: url(../img/1.png) no-repeat 0 0;
+  -webkit-transform: translateZ(50px);
+}
+.maxbox li:nth-child(2) {
+  background: url(../img/2.png) no-repeat 0 0;
+  -webkit-transform: translateZ(50px);
+}
+.maxbox li:nth-child(3) {
+  background: url(../img/3.png) no-repeat 0 0;
+  -webkit-transform: rotateX(-90deg) translateZ(50px);
+}
+.maxbox li:nth-child(4) {
+  background: url(../img/4.png) no-repeat 0 0;
+  -webkit-transform: rotateX(90deg) translateZ(50px);
+}
+.maxbox li:nth-child(5) {
+  background: url(../img/5.png) no-repeat 0 0;
+  -webkit-transform: rotateY(-90deg) translateZ(50px);
+}
+.maxbox li:nth-child(6) {
+  background: url(../img/6.png) no-repeat 0 0;
+  -webkit-transform: rotateY(90deg) translateZ(50px);
+}
+.maxbox {
+  width: 800px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  top: -20px;
+  -webkit-transform-style: preserve-3d; /*实现3d立体效果 */
+}
+.maxbox li {
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border: 1px solid #ccc;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.2;
+  -webkit-transition: all 1s ease;
+  /*transition: 将鼠标悬停在一个li元素上，逐步改变表格的宽度从 200px 到 400px：: */
+}
+.maxbox li:nth-child(1) {
+  -webkit-transform: translateZ(100px);
+}
+.maxbox li:nth-child(2) {
+  -webkit-transform: rotateX(180deg) translateZ(100px);
+}
+.maxbox li:nth-child(3) {
+  -webkit-transform: rotateX(-90deg) translateZ(100px);
+}
+.maxbox li:nth-child(4) {
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+}
+.maxbox li:nth-child(5) {
+  -webkit-transform: rotateY(-90deg) translateZ(100px);
+}
+.maxbox li:nth-child(6) {
+  -webkit-transform: rotateY(90deg) translateZ(100px);
+}
+
+/*transition: 将鼠标悬停在一个li元素上，逐步改变表格的宽度从 200px 到 400px：: */
+.box:hover ol li:nth-child(1) {
+  -webkit-transform: translateZ(300px);
+  width: 400px;
+  height: 400px;
+  opacity: 0.8;
+  left: -100px;
+  top: -100px;
+}
+.box:hover ol li:nth-child(2) {
+  -webkit-transform: rotateX(180deg) translateZ(300px);
+  width: 400px;
+  height: 400px;
+  opacity: 0.8;
+  left: -100px;
+  top: -100px;
+}
+.box:hover ol li:nth-child(3) {
+  -webkit-transform: rotateX(-90deg) translateZ(300px);
+  width: 400px;
+  height: 400px;
+  opacity: 0.8;
+  left: -100px;
+  top: -100px;
+}
+.box:hover ol li:nth-child(4) {
+  -webkit-transform: rotateX(90deg) translateZ(300px);
+  width: 400px;
+  height: 400px;
+  opacity: 0.8;
+  left: -100px;
+  top: -100px;
+}
+.box:hover ol li:nth-child(5) {
+  -webkit-transform: rotateY(-90deg) translateZ(300px);
+  width: 400px;
+  height: 400px;
+  opacity: 0.8;
+  left: -100px;
+  top: -100px;
+}
+.box:hover ol li:nth-child(6) {
+  -webkit-transform: rotateY(90deg) translateZ(300px);
+  width: 400px;
+  height: 400px;
+  opacity: 0.8;
+  left: -100px;
+  top: -100px;
+}
+
+/* CSS3 animation  move（动画） 属性 */
+@keyframes move {
+  0% {
+    -webkit-transform: rotateX(13deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(13deg) rotateY(360deg);
+  }
+}
