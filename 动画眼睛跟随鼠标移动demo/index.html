@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>动画眼睛跟随鼠标移动| Javascript</title>
+  </head>
+  <body>
+    <div class="face">
+      <div class="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
+      </div>
+    </div>
+    <!-- css代码块 -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        /* box-sizing: 属性允许以特定的方式定义匹配某个区域的特定元素 */
+      }
+      body {
+        display: flex;
+        /* 应用于容器或行内元素上 */
+        justify-content: center;
+        /* 横轴对齐 */
+        align-items: center;
+        /* 纵轴对齐 */
+        min-height: 100vh; /* 当元素没有内容时候，设置height:100%该元素不会被撑开 */
+        /* height:100vh == height:100%; */
+        background: rgb(200, 53, 219);
+      }
+      .face {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background: yellow;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+      .face::before {
+        content: " ";
+        position: absolute;
+        width: 150px;
+        height: 70px;
+        top: 180px;
+        background: #b57700;
+        border-bottom-left-radius: 70px;
+        border-bottom-right-radius: 70px;
+        transition: 0.5;
+      }
+
+      .face:hover::before {
+        top: 210px;
+        width: 150px;
+        height: 20px;
+        background: #b57700;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .eyes {
+        top: 40px;
+        position: relative;
+        display: flex;
+      }
+      .eyes .eye {
+        width: 80px;
+        height: 80px;
+        background: white;
+        border-radius: 50%;
+        position: relative;
+        display: block;
+        margin: 0 15px;
+      }
+
+      .eyes .eye::before {
+        position: absolute;
+        content: " ";
+        top: 50%;
+        left: 25px;
+        width: 40px;
+        height: 40px;
+        background: #333;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+
+    <!-- JAVASCRIPT代码块 -->
+    <script>
+      document.querySelector("body").addEventListener("mousemove", eyeball);
+      function eyeball() {
+        var eye = document.querySelectorAll(".eye");
+        eye.forEach(function(eye) {
+          let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+          let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+          let radian = Math.atan2(event.pageX - x, event.pageY - y);
+          let rot = radian * (180 / Math.PI) * -1 + 0;
+          eye.style.transform = "rotate(" + rot + "deg)";
+        });
+      }
+    </script>
+  </body>
+</html>
